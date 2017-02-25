@@ -1,0 +1,26 @@
+## The directory for keeping all the keys/etc
+DataDirectory /var/lib/tor
+
+## Entry policies to allow/deny SOCKS requests based on IP address.
+SocksPolicy accept 10.0.0.0/8
+SocksPolicy accept 172.16.0.0/12
+SocksPolicy accept 192.168.0.0/16
+SocksPolicy reject *
+
+## Tor opens a socks proxy on port 9050
+SocksPort 0.0.0.0:9150
+
+# ControlListenAddress is deprecated now so there only ControlPort
+ControlPort 0.0.0.0:9051
+
+## Logs go to stdout at level "notice"
+Log notice stdout
+
+# Try for at most NUM seconds when building circuits. If the circuit isn't open in that time, give up on it. (Default: 1 minute.)
+CircuitBuildTimeout 5
+# Send a padding cell every N seconds to keep firewalls from closing our connections while Tor is not in use.
+KeepalivePeriod 60
+# Force Tor to consider whether to build a new circuit every NUM seconds.
+NewCircuitPeriod 15
+# How many entry guards should we keep at a time?
+NumEntryGuards 8
