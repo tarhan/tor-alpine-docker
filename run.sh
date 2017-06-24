@@ -16,6 +16,7 @@ if [ ! -z "$EXIT_NODES" ]; then
   "Found EXIT_NODES environment variable. Applying it..."
   echo "ExitNodes $EXIT_NODES" >> /tmp/torrc
 fi
+
 if [ ! -z "$COUNTRY" ]; then
   "Found COUNTRY environment variable. Applying it as exit node..."
   echo "ExitNodes {$COUNTRY}" >> /tmp/torrc

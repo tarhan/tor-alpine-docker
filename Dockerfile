@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.6
 MAINTAINER Dmitriy Lekomtsev <lekomtsev@gmail.com>
 
 ENV EXIT_NODES ""

@@ -17,7 +17,7 @@ docker run -p 9150:9150 -p 9051:9051 -e PASSWORD=myPassword --name tor tarhan/to
 
 Or you can use ```docker-compose.yml```:
 ```yaml
-version: "2"
+version: "2.1"
 services:
   tor:
     image: "tarhan/tor-alpine:latest"
